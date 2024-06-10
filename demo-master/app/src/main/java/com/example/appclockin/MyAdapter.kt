@@ -27,9 +27,9 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
         val currentitem = userList[position]
 
-        holder.firstName.text = currentitem.userName
-        holder.lastName.text = currentitem.password
-        holder.age.text = currentitem.email
+        holder.firstName.text = currentitem.title
+        holder.lastName.text = currentitem.description
+        holder.age.text = currentitem.date
 
     }
 

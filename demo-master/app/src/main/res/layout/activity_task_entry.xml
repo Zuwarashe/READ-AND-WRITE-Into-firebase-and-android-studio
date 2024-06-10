@@ -8,52 +8,12 @@
     android:padding="16dp"
     tools:context=".TaskEntryActivity">
 
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Title" />
 
-    <EditText
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description" />
-
-    <EditText
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date" />
-
-    <EditText
-        android:id="@+id/startTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Start Time" />
-
-    <EditText
-        android:id="@+id/endTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="End Time" />
-
-    <Spinner
-        android:id="@+id/category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/category_array" />
-
-    <EditText
-        android:id="@+id/userId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="User ID" />
 
     <Button
         android:id="@+id/buttonSaveTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Task" />
+        android:text="Create Task" />
 
 </LinearLayout>

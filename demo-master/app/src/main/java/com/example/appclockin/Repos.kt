@@ -9,7 +9,7 @@ import com.google.firebase.database.ValueEventListener
 
 class Repos {
 
-    private val databaseReference : DatabaseReference = FirebaseDatabase.getInstance().getReference("users")
+    private val databaseReference : DatabaseReference = FirebaseDatabase.getInstance().getReference("taskentry")
 
     @Volatile private var INSTANCE : Repos ?= null
 

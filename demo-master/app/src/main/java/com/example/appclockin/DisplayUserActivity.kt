@@ -26,20 +26,20 @@ class DisplayUserActivity : AppCompatActivity() {
 
         username = findViewById(R.id.nameInput)
         btn = findViewById(R.id.searchButton)
-        first = findViewById(R.id.emailField)
+        first = findViewById(R.id.nameField)
         second = findViewById(R.id.emailField)
         third = findViewById(R.id.passwordField)
 
         btn.setOnClickListener(View.OnClickListener  {
 
             val usern = username.text.toString()
-            database = FirebaseDatabase.getInstance().getReference("users")
+            database = FirebaseDatabase.getInstance().getReference("taskentry")
             database.child(usern).get().addOnSuccessListener {
                 if (it.exists()){
 
-                    val firstn = it.child("userName").value
-                    val emailn = it.child("email").value
-                    val passn = it.child("password").value
+                    val firstn = it.child("title").value
+                    val emailn = it.child("description").value
+                    val passn = it.child("date").value
 
                     Toast.makeText(this, "Success",Toast.LENGTH_LONG).show()
 

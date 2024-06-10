@@ -2,33 +2,34 @@ package com.example.appclockin
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.Fragment
-import com.example.appclockin.databinding.ActivityMainBinding
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var firebaseRef: DatabaseReference
+    private lateinit var buttonNavigateToTaskEntry: Button
+    private lateinit var buttonNavigateToViewEntry: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        replaceFragment(Home())
-    }
 
-    private fun replaceFragment(fragment: Fragment) {
+        // Find buttons by their IDs
+        buttonNavigateToTaskEntry = findViewById(R.id.buttonNavigateToTaskEntry)
+        buttonNavigateToViewEntry = findViewById(R.id.buttonNavigateToViewEntry)
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,fragment)
-        fragmentTransaction.commit()
+        // Set click listener for buttonNavigateToTaskEntry
+        buttonNavigateToTaskEntry.setOnClickListener {
+            // Navigate to TaskEntryActivity
+            val intent = Intent(this, TaskEntryActivity::class.java)
+            startActivity(intent)
+        }
 
+        // Set click listener for buttonNavigateToViewEntry
+        buttonNavigateToViewEntry.setOnClickListener {
+            // Navigate to DisplayUserActivity
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
+        }
     }
 }
